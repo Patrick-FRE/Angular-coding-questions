@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from '../services/artist.service';
 import { Album } from '../interface/ItunesAPI.interface';
+import { Media } from '../enum/ItunesAPI.enum';
 
 @Component({
   selector: 'app-search',
@@ -46,10 +47,10 @@ export class SearchComponent implements OnInit {
     this.searching = true;
     this.notFound = false;
 
-    this.artistService.getAlbumsByArtistName(artistName).subscribe(
+    this.artistService.getAlbumsByArtistName(artistName, Media.music).subscribe(
       res => {
         console.log(res);
-        this.artistInfo = res['results'];
+        this.artistInfo = res.results;
         this.getAlbums();
       },
       error => console.log(error)

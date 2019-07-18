@@ -1,26 +1,26 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Media, Entity } from "../enum/ItunesAPI.enum";
-import { GetAlbumsByArtistNameResponse } from "../interface/ItunesAPI.interface";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Media, Entity } from '../enum/ItunesAPI.enum';
+import { GetAlbumsByArtistNameResponse } from '../interface/ItunesAPI.interface';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ArtistService {
   requestOptions: HttpHeaders;
 
   constructor(private http: HttpClient) {
     this.requestOptions = new HttpHeaders({
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type'
     });
   }
 
   getAlbumsByArtistName(
     artist: string,
-    media = Media.music,
+    media: Media,
     entity = Entity.album
   ): Observable<GetAlbumsByArtistNameResponse> {
     return this.http.get<GetAlbumsByArtistNameResponse>(
