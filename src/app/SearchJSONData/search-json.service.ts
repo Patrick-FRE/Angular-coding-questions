@@ -7,6 +7,6 @@ export class SearchJsonService {
   primaryGenreName: String;
   collectionName: String;
   artworkUrl60: String;
-  collectionViewUrl:String;
+  collectionViewUrl: String;
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchJsonService } from 'src/app/SearchJSON/search-json.service';
+import { SearchJsonService } from 'src/app/SearchJSONData/search-json.service';
 import { SearchLogicService } from 'src/app/APIService/search-logic.service';
 import { getTypeNameForDebugging } from '@angular/core/src/change_detection/differs/iterable_differs';
 
@@ -10,14 +10,14 @@ import { getTypeNameForDebugging } from '@angular/core/src/change_detection/diff
 })
 export class SearchAlbumComponent implements OnInit {
   postList: SearchJsonService[];
-  artistName = "";
+  artistName = '';
   constructor(private postService: SearchLogicService) { }
 
-  getName(name:string){
+  getName(name: string) {
     this.artistName = name;
-    if(this.artistName !== ""){
-      this.postService.getAllAlbums(this.artistName).subscribe(data=>{
-        this.postList=data; 
+    if (this.artistName !== '') {
+      this.postService.getAllAlbums(this.artistName).subscribe(data => {
+        this.postList = data;
       });
     }
   }
