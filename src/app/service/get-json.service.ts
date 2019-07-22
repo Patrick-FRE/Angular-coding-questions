@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable,throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { OriginData } from '../model/origin-data';
-import { map,catchError, debounceTime } from 'rxjs/operators';
+import { map, catchError, debounceTime } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({

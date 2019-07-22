@@ -1,4 +1,4 @@
-import { Injectable, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GetJsonService } from 'src/app/service/get-json.service';
 import { OriginData } from 'src/app/model/origin-data';
 import { AlbumResult } from 'src/app/model/album-result';
@@ -17,6 +17,6 @@ export class ResultPageComponent implements OnInit {
   }
   searchAlbums(artistName: string) {
     this.getJsonService.getAllAlbums(artistName).subscribe(data => {this.result = data; console.log(this.result);
-      this.albumInfo = this.result['results']; console.log(this.albumInfo); });
+      this.albumInfo = this.result['results']; console.log(this.albumInfo); console.log(artistName); });
   }
 }

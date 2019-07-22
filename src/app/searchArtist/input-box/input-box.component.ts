@@ -18,5 +18,4 @@ export class InputBoxComponent implements OnInit {
   onSubmit(inputName: string) {
     this.sendName.emit(inputName);
   }
-  
 }
