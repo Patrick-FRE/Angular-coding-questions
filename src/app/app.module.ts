@@ -8,6 +8,7 @@ import { ResultPageComponent } from './Albums-info/result-page/result-page.compo
 import { HttpClientModule } from '@angular/common/http';
 import { Sub20Pipe } from './pipe/sub20.pipe';
 import { HomeComponent } from './home/home/home.component';
+import { DetailedPageComponent } from './Albums-info/detailed-page/detailed-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home/home.component';
     InputBoxComponent,
     ResultPageComponent,
     Sub20Pipe,
-    HomeComponent
+    HomeComponent,
+    DetailedPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,34 +1,22 @@
-<app-input-box (sendName)=searchAlbums($event)></app-input-box>
-<div>
-  <div *ngFor='let albumName of albumInfo' class="albums-container">
-    <img class='album-cover' src={{albumName.artworkUrl100}}>
-    <div class='album-name'>{{albumName.collectionName|sub20}}</div>
+<div *ngIf="clickedAlbum" class="album-detail" (mouseout)=erase() [style.visibility]="isShown ? 'visible' : 'hidden'">
+  <div class="album-detail-content">
+    <div class="album-detail-content-left">
+       <img id="album-cover-big" src={{clickedAlbum.artworkUrl100}}>
+    </div>
+    <div class="album-detail-content-right">
+        <h3>{{clickedAlbum.collectionName}}</h3>
+        <p>Artist: {{clickedAlbum.artistName}}</p>
+        <p>Music Infomation: {{clickedAlbum.collectionViewUrl}}</p>
+        <p>Release Date: {{clickedAlbum.releaseDate}}</p>
+    </div>
+
   </div>
 </div>
-
- <style>
- .albums-container
-{
-  display:inline-block;
-  border: 2px black solid;
-  height:235px;
-  width:200px;
-  margin-left:40px;
-  margin-top:40px;
-  text-align: center;
-}
-.albums-container:nth-child(2n+1){
-  background-color: rgb(216, 214, 214);
-}
-
-.album-cover{
-  height:200px;
-  width:200px;
-}
-.album-name{
-  font-size: 18px;
-  width:200px;
-  overflow: hidden;
-  white-space: nowrap;
-}
- </style>
+<app-input-box (sendName)=searchAlbums($event)></app-input-box>
+<div class=albums-info>
+  <a *ngFor='let albumName of albumInfo' class="albums-container" (click)= getAlbumDetail(albumName.collectionName)>
+    <!--[routerLink]="['/albumname/',albumName.collectionName]" (click)=getAlbumDetail(albumName.collectionName)-->
+    <img class='album-cover' src={{albumName.artworkUrl100}}>
+    <div class='album-name'>{{albumName.collectionName|sub20}}</div>
+  </a>
+</div>

@@ -1,0 +1,73 @@
+
+.albums-info
+{
+     z-index: 0;
+}
+ .albums-container
+{
+  display:inline-block;
+  border: 2px black solid;
+  height:235px;
+  width:200px;
+  margin-left:40px;
+  margin-top:40px;
+  text-align: center;
+}
+.albums-container:nth-child(2n+1){
+  background-color: rgb(216, 214, 214);
+}
+
+.album-cover{
+  height:200px;
+  width:200px;
+}
+.album-name{
+  font-size: 18px;
+  width:200px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.album-detail{
+  position: fixed;
+  width: 60vw;
+  height:30vw;
+  margin-top:100px;
+  margin-left:20vw;
+  /* margin-top:200px;
+  margin-left:200px; */
+  z-index:1;
+
+
+}
+.album-detail::after{
+  content: "";
+  background:cornsilk;
+  opacity: 0.85;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  border-radius: 25px;
+  border: 2px solid black;
+}
+.album-detail-content{
+    position:relative;
+    margin-left:25px;
+}
+.album-detail-content-left{
+    display:inline-block;
+    width:40%;
+}
+.album-detail-content-right{
+    display:inline-block;
+    width:55%;
+    margin-left:3%;
+
+}
+#album-cover-big{
+    width:100%;
+    vertical-align: middle;
+    margin-top:15%;
+}
