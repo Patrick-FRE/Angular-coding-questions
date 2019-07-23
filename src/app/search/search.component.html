@@ -2,10 +2,22 @@
 
     <div class="row">
       <div class="column column-80">
-        <input type="text" placeholder="Artist Name">
+        <input type="text" placeholder="Artist Name" #artistName>
       </div>
       <div class="column column-20">
-        <button class="button button-outline">Search</button>
+        <input class="button button-outline" value="Search" (click)="showArtist(artistName.value)">
       </div>
     </div>
   </div>
+  <!-- <div>
+    'view' get data from 'model'
+    string interpolation
+    <p>{{name}}</p>
+    property blinding
+    <input type="text" [value]="name">
+    'model' get data from 'view'
+    event blinding
+    <h1 (click)="changeBackgroundColor(1)">hello world</h1>
+    <h1 (click)="changeBackgroundColor(2)">hello jr</h1>
+    ng model
+  </div> -->

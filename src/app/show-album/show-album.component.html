@@ -1,0 +1,10 @@
+<!-- <button (click)="showAlbum()">
+  show-album works!
+</button> -->
+<app-search (getAlbumsbyName)="showAlbum($event)"></app-search>
+<div class="container">
+  <div *ngFor="let album of artistInfo">
+    <img src={{album.artworkUrl100}}>
+    <p>{{album.collectionName}}</p>
+  </div>
+</div>
