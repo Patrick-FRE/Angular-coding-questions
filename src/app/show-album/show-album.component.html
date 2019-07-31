@@ -3,8 +3,16 @@
 </button> -->
 <app-search (getAlbumsbyName)="showAlbum($event)"></app-search>
 <div class="container">
-  <div *ngFor="let album of artistInfo">
-    <img src={{album.artworkUrl100}}>
-    <p>{{album.collectionName}}</p>
-  </div>
+  <!-- <div class="row"> -->
+    <div *ngFor="let album of artistInfo; let i = index" class="column column-20">
+      <div *ngIf="i % 5 == 0" class="row">
+        <!-- <img src={{album.artworkUrl100}}> -->
+        <p>{{album.collectionName}}</p>
+        <div *ngIf="i + 1 < album.length" class="column column-20">{{ album.collectionName[i + 1] }}</div>
+        <div *ngIf="i + 2 < album.length" class="column column-20">{{ album.collectionName[i + 2] }}</div>
+        <div *ngIf="i + 3 < album.length" class="column column-20">{{ album.collectionName[i + 3] }}</div>
+        <div *ngIf="i + 4 < album.length" class="column column-20">{{ album.collectionName[i + 4] }}</div>
+      </div>
+    </div>
+  <!-- </div> -->
 </div>
