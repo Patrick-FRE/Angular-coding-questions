@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlbumService } from './models/album.model';
+import { AlbumService } from './services/album.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,7 @@ import { AlbumService } from './models/album.model';
 export class AppComponent {
   title = 'angular-coding-questions'
 
-  constructor(private albumService: AlbumService) {
+  constructor() {
 
-  }
-
-  getAlbums() {
-    this.albumService.getAlbums('linkinpark').subscribe(data => console.log(data))
   }
 }

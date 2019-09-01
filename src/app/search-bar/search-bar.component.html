@@ -1,0 +1,19 @@
+<div class="search-container">
+  <input 
+    type="text" 
+    class="textbox" 
+    placeholder="Search"
+    [(ngModel)]="searchTerm"
+    >
+  <button 
+    title="Search" 
+    value="" 
+    type="submit" 
+    class="button"
+    (click)="onSearch()"
+    >
+    Go
+  </button>
+</div>
+
+

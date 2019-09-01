@@ -1,29 +1,29 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-//import { Media, Entity } from "../enum/ItunesAPI.enum";
-//import { GetAlbumsByArtistNameResponse } from "../interface/ItunesAPI.interface";
+import { Observable, Subject } from "rxjs";
+import { itunesAPIResponse, Album } from '../interfaces/itunesAPI.interface'
 
 @Injectable({
   providedIn: "root"
 })
-export class ArtistService {
-  requestOptions: HttpHeaders;
+export class AlbumService {
+  config: HttpHeaders
+  albums: Subject<Album[]> = new Subject<Album[]>()
 
   constructor(private httpService: HttpClient) {
-    this.requestOptions = new HttpHeaders({
+    this.config = new HttpHeaders({
       "Content-Type": "application/json",
       Accept: "application/json",
       "Access-Control-Allow-Headers": "Content-Type"
-    });
+    })
   }
 
-  getAlbums(artist: string): Observable<any> {
-    return this.httpService.get<any>(
-      `https://itunes.apple.com/search?term=${artist}&entity=${'album'}`,
+  getAlbums(artist: string) {
+    this.httpService.get<itunesAPIResponse>(
+      `https://itunes.apple.com/search?term=${artist}&entity=album`,
       {
-        headers: this.requestOptions
+        headers: this.config
       }
-    )
+    ).subscribe(data => this.albums.next(data.results))
   }
 }
