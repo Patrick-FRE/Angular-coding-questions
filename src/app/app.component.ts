@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlbumService } from './services/album.service';
+import { AlbumService } from './models/album.model';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,6 @@ export class AppComponent {
   }
 
   getAlbums() {
-    this.albumService.getAlbums().then(data => console.log(data))
+    this.albumService.getAlbums('linkinpark').subscribe(data => console.log(data))
   }
 }
