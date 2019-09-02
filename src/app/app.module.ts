@@ -6,16 +6,16 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AlbumListComponent } from './album-list/album-list.component';
-import { AlbumItemComponent } from './album-list/album-item/album-item.component';
 import { LargerImagePipe } from './pipes/larger-image.pipe';
+import { HideLongTextPipe } from './pipes/hide-long-text.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     AlbumListComponent,
-    AlbumItemComponent,
-    LargerImagePipe
+    LargerImagePipe,
+    HideLongTextPipe
   ],
   imports: [
     BrowserModule,

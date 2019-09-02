@@ -9,6 +9,7 @@ import { itunesAPIResponse, Album } from '../interfaces/itunesAPI.interface'
 export class AlbumService {
   config: HttpHeaders
   albums: Subject<Album[]> = new Subject<Album[]>()
+  isFetching: Subject<boolean> = new Subject<boolean>()
 
   constructor(private httpService: HttpClient) {
     this.config = new HttpHeaders({
@@ -19,11 +20,15 @@ export class AlbumService {
   }
 
   getAlbums(artist: string) {
+    this.isFetching.next(true)
     this.httpService.get<itunesAPIResponse>(
       `https://itunes.apple.com/search?term=${artist}&entity=album`,
       {
         headers: this.config
       }
-    ).subscribe(data => this.albums.next(data.results))
+    ).subscribe(data => {
+      this.albums.next(data.results)
+      this.isFetching.next(false)
+    })
   }
 }

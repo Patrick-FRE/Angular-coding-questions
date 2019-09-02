@@ -17,7 +17,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSearch() {
-    console.log(this.searchTerm)
     this.albumService.getAlbums(this.searchTerm)
+    this.searchTerm = ""
   }
 }

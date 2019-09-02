@@ -9,15 +9,26 @@ import { Album } from '../interfaces/itunesAPI.interface'
 })
 export class AlbumListComponent implements OnInit {
   albums: Album[]
+  noResults: boolean = false
+  isFetching: boolean = false
+  window = window
 
   constructor(private albumService: AlbumService) { 
     this.albumService.albums.subscribe(data => {
-      this.albums = data
+      if(data.length === 0) {
+        this.noResults = true
+      } else {
+        this.albums = data
+        this.noResults = false
+      }
       console.log(data)
+    })
+    this.albumService.isFetching.subscribe(data => {
+      this.isFetching = data
+      console.log(this.isFetching)
     })
   }
 
   ngOnInit() {
   }
-
 }
