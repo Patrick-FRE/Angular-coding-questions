@@ -8,8 +8,8 @@ import { ArtistService } from '../service/artist.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  searchTerm: string;
-  artistInfo: Album[];
+searchTerm: string;
+artistInfo: Album[];
  @Output() getAlbumsbyName = new EventEmitter<Album[]>();
 
   constructor(private artistService: ArtistService) { 
@@ -17,8 +17,8 @@ export class SearchComponent implements OnInit {
   }
 
 
-showAlbum() {
-    this.artistService.getAlbums(this.searchTerm).subscribe(data => this.getAlbumsbyName.emit(data.results))
+eventHandler() {
+    this.artistService.getAlbums(this.searchTerm);
   }
 
 
