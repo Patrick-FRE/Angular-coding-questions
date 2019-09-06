@@ -9,8 +9,6 @@ import {GetAlbumsByArtistName} from '../model/getAlbumsbyArtistName';
 })
 export class ArtistService {
   requestOptions: HttpHeaders
- /*  artistAlbums:  Subject <Album[]> = new Subject <Album[]>()
-  getResult: Subject <boolean> = new Subject <boolean>() */
 
 
     constructor(private http: HttpClient) {
@@ -28,9 +26,6 @@ export class ArtistService {
         {
           headers: this.requestOptions
         }
-      )/* .subscribe(data => {
-        this.artistAlbums.next(data.results)
-        this.getResult.next(false)
-      })  */
+      )
     }
 }
