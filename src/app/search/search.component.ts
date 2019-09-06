@@ -9,16 +9,14 @@ import { ArtistService } from '../service/artist.service';
 })
 export class SearchComponent implements OnInit {
 searchTerm: string;
-artistInfo: Album[];
- @Output() getAlbumsbyName = new EventEmitter<Album[]>();
+ @Output() getAlbumsbyName = new EventEmitter<any>();
 
-  constructor(private artistService: ArtistService) { 
-    this.artistService.getAlbums('')
+  constructor() {
   }
 
 
 eventHandler() {
-    this.artistService.getAlbums(this.searchTerm);
+    this.getAlbumsbyName.emit(this.searchTerm);
   }
 
 
