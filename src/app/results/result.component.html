@@ -1,0 +1,11 @@
+<ng-container>
+    <div class="albumResult-container">
+      <ng-container *ngFor="let album of albums">
+        <div class="album-container">
+          <img [src]="album.artworkUrl100">
+          <div class="artistName">{{album.artistName}}</div> 
+          <div class="albumName">{{album.collectionName}}</div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>

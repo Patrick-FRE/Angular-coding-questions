@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-coding-questions';
+  albums
+
+  showAlbum(albums) {
+    this.albums = albums
+  }
 }
