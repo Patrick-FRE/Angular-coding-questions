@@ -1,4 +1,4 @@
-<ng-container *ngIf="!noResults">
+<ng-container *ngIf="albums.length !== 0">
   <div class="album-list-container">
     <ng-container *ngFor="let album of albums">
       <div class="album-container">
@@ -16,7 +16,7 @@
     </ng-container>
   </div>
 </ng-container>
-<ng-container *ngIf="noResults && !isFetching">
+<ng-container *ngIf="albums.length === 0 && !isFetching">
   <div class="no-results">
     No results found...
   </div>

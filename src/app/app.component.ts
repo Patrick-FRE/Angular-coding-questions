@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlbumService } from './services/album.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,7 @@ import { AlbumService } from './services/album.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-coding-questions'
+  title = 'angular-coding-questions';
 
   constructor() {
 

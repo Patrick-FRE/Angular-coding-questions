@@ -4,6 +4,7 @@
     class="textbox" 
     placeholder="Search"
     [(ngModel)]="searchTerm"
+    (keyup.enter)="onSearch()"
     >
   <button 
     title="Search" 
@@ -11,7 +12,6 @@
     type="submit" 
     class="button"
     (click)="onSearch()"
-    (keyup.enter)="onSearch()"
     >
     Go
   </button>

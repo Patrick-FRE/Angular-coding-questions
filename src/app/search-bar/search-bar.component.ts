@@ -7,17 +7,13 @@ import { AlbumService } from '../services/album.service';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  searchTerm: string
+  searchTerm: string;
 
-  constructor(private albumService: AlbumService) { 
-  
-  }
+  constructor(private albumService: AlbumService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSearch() {
-    this.albumService.getAlbums(this.searchTerm)
-    this.searchTerm = ""
+    this.albumService.getAlbums(this.searchTerm);
   }
 }
