@@ -3,4 +3,8 @@
     collectionViewUrl: string;
     artworkUrl100: string;
   }
-  
+
+  export interface GetAlbumsByArtistName {
+    resultCount: number;
+    results: Album[];
+  }

@@ -10,8 +10,7 @@ export class AppComponent {
 
 
 
-
-showAlbum(el) {
+showName(el) {
   console.log(el);
 }
 }

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, from, Subject} from 'rxjs';
 import { Album} from '../model/Album';
-import {GetAlbumsByArtistName} from '../model/getAlbumsbyArtistName';
+import {GetAlbumsByArtistName} from '../model/album';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ArtistService {
-  requestOptions: HttpHeaders
+  requestOptions: HttpHeaders;
 
 
     constructor(private http: HttpClient) {
@@ -19,13 +19,13 @@ export class ArtistService {
       });
     }
 
-    getAlbums(artist: string): Observable<GetAlbumsByArtistName>{
-     // this.getResult.next(true)
-      return this.http.get<GetAlbumsByArtistName>(
-        `https://itunes.apple.com/search?term=${artist}&entity=album`,
+    getAlbums(artist: string): Observable<GetAlbumsByArtistName> {
+    return this.http.get<GetAlbumsByArtistName>(
+    `https://itunes.apple.com/search?term=${artist}&entity=album`,
         {
           headers: this.requestOptions
         }
-      )
+      );
     }
+
 }
