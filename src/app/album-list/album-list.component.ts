@@ -5,7 +5,7 @@ import { Album } from '../interfaces/itunesAPI.interface';
 @Component({
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
-  styleUrls: ['./album-list.component.css']
+  styleUrls: ['./album-list.component.scss']
 })
 export class AlbumListComponent implements OnInit {
   albums: Album[];
@@ -16,7 +16,7 @@ export class AlbumListComponent implements OnInit {
   constructor(private albumService: AlbumService) {
     this.albumService.albums.subscribe(data => {
       this.albums = data;
-      console.log(this.albums)
+      console.log(this.albums);
     });
     this.albumService.isFetchingAlbums.subscribe(data => {
       this.isFetching = data;
