@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { GetAlbumsByArtistName, Album} from '../model/album';
 import { ArtistService } from '../service/artist.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-result',
@@ -27,6 +26,6 @@ export class ResultComponent implements OnInit {
         console.log(this.albumList);
        this.albums = this.albumList['results'];
       });
-      
+
   }
 }
