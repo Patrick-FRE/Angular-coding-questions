@@ -1,11 +1,10 @@
-<ng-container>
-    <div class="albumResult-container">
-      <ng-container *ngFor="let album of albums">
-        <div class="album-container">
-          <img [src]="album.artworkUrl100">
-          <div class="artistName">{{album.artistName}}</div> 
-          <div class="albumName">{{album.collectionName}}</div>
-        </div>
-      </ng-container>
-    </div>
-  </ng-container>
+<app-search (getAlbumsbyName)="showName($event)"></app-search>
+
+<div class="albumResult-container">
+  <div class="album-container" *ngFor="let album of albums">
+    <img [src]="album.artworkUrl100" />
+    <div class="artistName">{{ album.artistName }}</div>
+    <div class="albumName">{{ album.collectionName }}</div>
+  </div>
+</div>
+

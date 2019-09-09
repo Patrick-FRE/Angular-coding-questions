@@ -6,5 +6,5 @@
 
   export interface GetAlbumsByArtistName {
     resultCount: number;
-    results: Album[];
+    results: string;
   }
