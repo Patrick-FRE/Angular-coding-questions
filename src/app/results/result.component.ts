@@ -15,10 +15,6 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() { }
 
-  showName(el: string) {
-    console.log(el);
-  }
-
   showAlbums(artist: string) {
    this.showAlbumList.getAlbums(artist)
       .subscribe(data =>  {
