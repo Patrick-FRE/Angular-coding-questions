@@ -13,7 +13,7 @@ searchTerm: string;
   }
 
 
-  onkeydown(event) {
+  onkeydown(event: any) {
     if (event.key === 'Enter') {
     this.getAlbumsbyName.emit(this.searchTerm);
     }

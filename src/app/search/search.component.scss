@@ -9,7 +9,7 @@ margin-left: 5px;
 } */
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,9 +23,9 @@ html, body {
 body {
   background: #252525;
 }
-
+ */
 .container {
-  position: absolute;
+  position: sticky;
   margin: auto;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ body {
     left: 0;
     width: 80px;
     height: 80px;
-    background: crimson;
+    background: #5680e9;
     border-radius: 50%;
     transition: all 1s;
     z-index: 4;
@@ -93,12 +93,12 @@ body {
     outline: none;
     border: none;
     // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: crimson;
+    background: #5680e9;
     color: white;
-    text-shadow: 0 0 10px crimson;
+    text-shadow: 0 0 10px #5680e9;
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 0 crimson,
+    box-shadow: 0 0 25px 0 #5680e9,
                 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
     transition: all 1s;
@@ -116,7 +116,7 @@ body {
     }
     &:focus ~ .search {
       right: -250px;
-      background: #151515;
+      background: #f172a1;
       z-index: 6;
       &::before {
         top: 0;
