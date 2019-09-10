@@ -1,11 +1,21 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
   name: 'hideLongText'
 })
 export class HideLongTextPipe implements PipeTransform {
+  transformInputIsNotAStringWarning =
+    'hide long pipe transform input is not a string'
+  textLengthLimit = 25
 
   transform(value: string): string {
-    return value.length > 25 ? value.substr(0, 25) + '...' : value;
+    if (typeof value === 'string') {
+      return value.length > this.textLengthLimit
+        ? value.substr(0, this.textLengthLimit) + '...'
+        : value
+    } else {
+      console.warn(this.transformInputIsNotAStringWarning)
+      return value
+    }
   }
 }

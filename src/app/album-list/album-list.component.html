@@ -1,22 +1,22 @@
-<ng-container *ngIf="albums.length !== 0">
+<ng-container *ngIf="albums === null">
   <div class="album-list-container">
     <ng-container *ngFor="let album of albums">
       <div class="album-container">
-        <img [src]="album.artworkUrl100 | largerImage">
-        <div class="album-info">
-        </div>
-        <div class="artist-name">{{ album.artistName }}</div> 
+        <img [src]="album.artworkUrl100 | largerImage" />
+        <div class="album-info"></div>
+        <div class="artist-name">{{ album.artistName }}</div>
         <div class="album-name">{{ album.collectionName | hideLongText }}</div>
-        <a 
-          class="play-now" 
+        <a
+          class="play-now"
           href="#"
           (click)="window.open(album.collectionViewUrl)"
-          >PLAY NOW</a>
+          >PLAY NOW</a
+        >
       </div>
     </ng-container>
   </div>
 </ng-container>
-<ng-container *ngIf="albums.length === 0 && !isFetching">
+<ng-container *ngIf="albums !== null && !isFetching">
   <div class="no-results">
     No results found...
   </div>
@@ -28,4 +28,3 @@
     </div>
   </div>
 </ng-container>
-
