@@ -1,4 +1,4 @@
-<ng-container *ngIf="albums === null">
+<ng-container *ngIf="albums !== null">
   <div class="album-list-container">
     <ng-container *ngFor="let album of albums">
       <div class="album-container">
@@ -16,12 +16,12 @@
     </ng-container>
   </div>
 </ng-container>
-<ng-container *ngIf="albums !== null && !isFetching">
+<ng-container *ngIf="noResults">
   <div class="no-results">
     No results found...
   </div>
 </ng-container>
-<ng-container *ngIf="isFetching">
+<ng-container *ngIf="isFetching === true">
   <div class="spinner-container">
     <div class="spinner-border text-success" role="status">
       <span class="sr-only">Loading...</span>

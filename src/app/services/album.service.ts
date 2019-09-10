@@ -5,7 +5,7 @@ import { itunesAPIResponse, Album } from '../interfaces/itunesAPI.interface'
 
 export const initialValue = {
   albums: null,
-  isFetchingAlbums: false
+  isFetchingAlbums: null
 }
 
 @Injectable({
