@@ -1,6 +1,7 @@
-import { Component, OnInit} from '@angular/core';
-import { GetAlbumsByArtistName, Album} from '../model/album';
-import { ArtistService } from '../service/artist.service';
+import { Component, OnInit, Input} from '@angular/core';
+import {Album} from '../model/album';
+/* import { GetAlbumsByArtistName, Album} from '../model/album';
+import { ArtistService } from '../service/artist.service'; */
 
 @Component({
   selector: 'app-result',
@@ -8,14 +9,14 @@ import { ArtistService } from '../service/artist.service';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  albumList: GetAlbumsByArtistName[];
-  albums: Album[];
+  // albums: Album[];
+  @Input() albums: Album[];
 
-  constructor(private showAlbumList: ArtistService) { }
+  constructor() { }
 
   ngOnInit() { }
 
-  showAlbums(artist: string) {
+  /* showAlbums(artist: string) {
    this.showAlbumList.getAlbums(artist)
       .subscribe(data =>  {
         this.albumList = data;
@@ -23,5 +24,5 @@ export class ResultComponent implements OnInit {
        this.albums = this.albumList['results'];
       });
 
-  }
+  } */
 }
