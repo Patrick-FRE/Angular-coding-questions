@@ -2,11 +2,7 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { SearchComponent } from './search.component';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ArtistService } from '../service/artist.service';
 import { By } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
 const params = {
   testText: 'text',
